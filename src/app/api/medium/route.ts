@@ -12,13 +12,7 @@ interface MediumPost {
  */
 export async function GET() {
   try {
-    // Replace with your Medium RSS feed URL
-    // Format: https://medium.com/feed/@yourusername
-    const RSS_URL = process.env.MEDIUM_RSS_URL || "";
-
-    if (!RSS_URL) {
-      return NextResponse.json({ posts: [] });
-    }
+    const RSS_URL = "https://medium.com/feed/@matias.turra";
 
     const response = await fetch(RSS_URL, {
       next: { revalidate: 3600 }, // Revalidate every hour

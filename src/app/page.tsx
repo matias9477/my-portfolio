@@ -16,16 +16,16 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="border-b border-gray-200 bg-white py-20 dark:border-gray-800 dark:bg-black">
+      <section className="border-b border-gray-800 bg-black py-20">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-4 text-5xl font-bold text-gray-900 dark:text-gray-100 sm:text-6xl">
+            <h1 className="mb-4 text-5xl font-bold text-gray-100 sm:text-6xl">
               Matias Turra
             </h1>
-            <p className="mb-2 text-2xl font-semibold text-gray-700 dark:text-gray-300">
+            <p className="mb-2 text-2xl font-semibold text-gray-300">
               Lead UI Engineer
             </p>
-            <p className="mb-8 text-lg text-gray-600 dark:text-gray-400">
+            <p className="mb-8 text-lg text-gray-400">
               Building beautiful, performant, and accessible web and mobile
               applications with modern technologies.
             </p>
@@ -46,13 +46,13 @@ export default function HomePage() {
 
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
-        <section className="border-b border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-black">
+        <section className="border-b border-gray-800 bg-black py-16">
           <Container>
             <div className="mb-8">
-              <h2 className="mb-2 text-3xl font-bold text-gray-900 dark:text-gray-100">
+              <h2 className="mb-2 text-3xl font-bold text-gray-100">
                 Latest Blog Posts
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-400">
                 Recent articles and snippets from my blog.
               </p>
             </div>
@@ -72,13 +72,13 @@ export default function HomePage() {
 
       {/* Featured Projects */}
       {featuredProjects.length > 0 && (
-        <section className="border-b border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-black">
+        <section className="border-b border-gray-800 bg-black py-16">
           <Container>
             <div className="mb-8">
-              <h2 className="mb-2 text-3xl font-bold text-gray-900 dark:text-gray-100">
+              <h2 className="mb-2 text-3xl font-bold text-gray-100">
                 Featured Projects
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-400">
                 Highlighted projects and applications I've built.
               </p>
             </div>
@@ -97,7 +97,7 @@ export default function HomePage() {
       )}
 
       {/* Medium Posts */}
-      <section className="bg-white py-16 dark:bg-black">
+      <section className="bg-black py-16">
         <Container>
           <MediumFeed />
         </Container>

@@ -33,11 +33,11 @@ export const Button = ({
 
   const variants = {
     primary:
-      "bg-black text-white hover:bg-gray-800 focus:ring-black dark:bg-white dark:text-black dark:hover:bg-gray-200",
+      "bg-white text-black hover:bg-gray-200 focus:ring-white",
     secondary:
-      "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700",
+      "bg-gray-800 text-gray-100 hover:bg-gray-700 focus:ring-gray-500",
     outline:
-      "border-2 border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800",
+      "border-2 border-gray-600 text-gray-300 hover:bg-gray-800 focus:ring-gray-500",
   };
 
   const classes = cn(baseStyles, variants[variant], className);

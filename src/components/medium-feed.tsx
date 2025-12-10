@@ -39,22 +39,22 @@ export const MediumFeed = () => {
 
   if (loading) {
     return (
-      <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
+      <div className="rounded-lg border border-gray-800 bg-gray-900 p-6">
+        <h2 className="mb-4 text-2xl font-bold text-gray-100">
           Medium Posts
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">Loading...</p>
+        <p className="text-gray-400">Loading...</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
+      <div className="rounded-lg border border-gray-800 bg-gray-900 p-6">
+        <h2 className="mb-4 text-2xl font-bold text-gray-100">
           Medium Posts
         </h2>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-sm text-gray-400">
           {error}
         </p>
       </div>
@@ -66,8 +66,8 @@ export const MediumFeed = () => {
   }
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-      <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
+    <div className="rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <h2 className="mb-4 text-2xl font-bold text-gray-100">
         Medium Posts
       </h2>
       <ul className="space-y-3">
@@ -77,10 +77,10 @@ export const MediumFeed = () => {
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+              className="block text-gray-300 transition-colors hover:text-gray-100"
             >
               <h3 className="font-medium">{post.title}</h3>
-              <time className="text-sm text-gray-500 dark:text-gray-400">
+              <time className="text-sm text-gray-400">
                 {new Date(post.pubDate).toLocaleDateString()}
               </time>
             </a>

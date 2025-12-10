@@ -39,11 +39,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <MDXRemote {...mdxSource} />
         </MDXWrapper>
         {(previousPost || nextPost) && (
-          <nav className="mt-12 flex justify-between border-t border-gray-200 pt-8 dark:border-gray-800">
+          <nav className="mt-12 flex justify-between border-t border-gray-800 pt-8">
             {previousPost ? (
               <Link
                 href={`/blog/${previousPost.slug}`}
-                className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="text-gray-400 transition-colors hover:text-gray-100"
               >
                 <span className="text-sm">← Previous</span>
                 <div className="font-medium">{previousPost.title}</div>
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {nextPost && (
               <Link
                 href={`/blog/${nextPost.slug}`}
-                className="text-right text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="text-right text-gray-400 transition-colors hover:text-gray-100"
               >
                 <span className="text-sm">Next →</span>
                 <div className="font-medium">{nextPost.title}</div>

@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { Container } from "./container";
-import { ThemeToggle } from "../ui/theme-toggle";
 
 /**
- * Site header component with navigation and theme toggle
+ * Site header component with navigation
  */
 export const Header = () => {
   const navItems = [
@@ -15,12 +14,12 @@ export const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-black/80">
+    <header className="sticky top-0 z-50 border-b border-gray-800 bg-black/80 backdrop-blur-sm">
       <Container>
         <nav className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-bold text-gray-900 transition-colors hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-400"
+            className="text-xl font-bold text-gray-100 transition-colors hover:text-gray-400"
           >
             Portfolio
           </Link>
@@ -30,13 +29,12 @@ export const Header = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                  className="text-sm font-medium text-gray-400 transition-colors hover:text-gray-100"
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
-            <ThemeToggle />
           </div>
         </nav>
       </Container>

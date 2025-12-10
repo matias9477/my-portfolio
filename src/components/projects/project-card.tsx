@@ -42,16 +42,16 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   };
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-gray-300 hover:shadow-md dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700">
+    <div className="rounded-lg border border-gray-800 bg-gray-900 p-6 transition-all hover:border-gray-700 hover:shadow-md">
       <div className="mb-3">
-        <h3 className="mb-1 text-xl font-semibold text-gray-900 dark:text-gray-100">
+        <h3 className="mb-1 text-xl font-semibold text-gray-100">
           {project.name}
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-sm text-gray-400">
           {project.role}
         </p>
       </div>
-      <p className="mb-4 text-gray-700 dark:text-gray-300">
+      <p className="mb-4 text-gray-300">
         {project.description}
       </p>
       <div className="mb-4 flex flex-wrap gap-2">
@@ -69,7 +69,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-gray-100"
               aria-label={`${link.type} link for ${project.name}`}
             >
               {getLinkIcon(link.type)}

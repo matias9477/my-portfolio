@@ -16,7 +16,7 @@ export const PostHeader = ({ post }: PostHeaderProps) => {
     <header className="mb-8">
       <Link
         href="/blog"
-        className="mb-6 inline-flex items-center text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+        className="mb-6 inline-flex items-center text-sm text-gray-400 transition-colors hover:text-gray-100"
       >
         <svg
           className="mr-2 h-4 w-4"
@@ -35,11 +35,11 @@ export const PostHeader = ({ post }: PostHeaderProps) => {
       </Link>
       <div className="mb-4 flex items-center gap-3">
         <Badge variant="outline">{post.kind}</Badge>
-        <time className="text-sm text-gray-500 dark:text-gray-400">
+        <time className="text-sm text-gray-400">
           {formatDate(post.date)}
         </time>
       </div>
-      <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-gray-100">
+      <h1 className="mb-4 text-4xl font-bold text-gray-100">
         {post.title}
       </h1>
       {post.tags.length > 0 && (

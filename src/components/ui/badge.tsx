@@ -22,11 +22,11 @@ export const Badge = ({
 
   const variants = {
     default:
-      "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200",
+      "bg-gray-800 text-gray-200",
     secondary:
-      "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-100",
+      "bg-gray-700 text-gray-100",
     outline:
-      "border border-gray-300 text-gray-700 dark:border-gray-600 dark:text-gray-300",
+      "border border-gray-600 text-gray-300",
   };
 
   return (
