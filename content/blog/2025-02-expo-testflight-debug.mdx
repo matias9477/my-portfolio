@@ -1,0 +1,40 @@
+---
+title: "Debugging Expo Apps in TestFlight"
+date: "2025-02-01"
+summary: "A quick guide on how to debug React Native Expo apps when they're deployed to TestFlight."
+tags: ["react-native", "expo", "debugging", "testflight"]
+kind: "snippet"
+---
+
+# Debugging Expo Apps in TestFlight
+
+When your Expo app is running in TestFlight, debugging can be tricky. Here's a quick solution:
+
+## The Problem
+
+You can't use the standard Expo DevTools when your app is in TestFlight because it's a production build.
+
+## The Solution
+
+1. **Enable Remote JS Debugging**: Shake your device or use the gesture to open the developer menu
+2. **Use React Native Debugger**: Connect to your device's IP address
+3. **Check Logs**: Use `npx expo start --dev-client` and check the terminal output
+
+## Alternative: Sentry
+
+For production debugging, consider integrating Sentry:
+
+```bash
+npx expo install @sentry/react-native
+```
+
+This gives you crash reports and error tracking in production.
+
+## Pro Tip
+
+Always test your production builds locally before submitting to TestFlight:
+
+```bash
+eas build --profile production --platform ios
+```
+

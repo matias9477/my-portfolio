@@ -1,0 +1,38 @@
+import { cn } from "@/lib/utils";
+
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: "default" | "secondary" | "outline";
+  className?: string;
+}
+
+/**
+ * Badge component for displaying tags, labels, or status indicators
+ * @param children - Badge content
+ * @param variant - Badge style variant
+ * @param className - Additional CSS classes
+ */
+export const Badge = ({
+  children,
+  variant = "default",
+  className,
+}: BadgeProps) => {
+  const baseStyles =
+    "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium";
+
+  const variants = {
+    default:
+      "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200",
+    secondary:
+      "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-100",
+    outline:
+      "border border-gray-300 text-gray-700 dark:border-gray-600 dark:text-gray-300",
+  };
+
+  return (
+    <span className={cn(baseStyles, variants[variant], className)}>
+      {children}
+    </span>
+  );
+};
+

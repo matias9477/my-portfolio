@@ -1,0 +1,36 @@
+---
+title: "Clearing Xcode Derived Data Cache"
+date: "2025-02-05"
+summary: "A tiny snippet on how to quickly clear Xcode's derived data cache when builds are acting up."
+tags: ["xcode", "ios", "debugging"]
+kind: "snippet"
+---
+
+# Clearing Xcode Derived Data Cache
+
+When Xcode builds start acting weird, clearing the derived data cache often helps.
+
+## Quick Fix
+
+```bash
+rm -rf ~/Library/Developer/Xcode/DerivedData
+```
+
+Or use Xcode's menu:
+
+1. **Xcode** → **Settings** → **Locations**
+2. Click the arrow next to **Derived Data** path
+3. Delete the contents of the folder
+
+## Why This Works
+
+Xcode caches build artifacts in DerivedData. Sometimes these get corrupted or out of sync, causing build failures or strange behavior.
+
+## Pro Tip
+
+Add this to your shell profile for quick access:
+
+```bash
+alias clear-xcode="rm -rf ~/Library/Developer/Xcode/DerivedData && echo 'Xcode cache cleared!'"
+```
+
