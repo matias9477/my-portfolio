@@ -25,7 +25,11 @@ export const getAllPosts = (): BlogPost[] => {
 
   const fileNames = fs.readdirSync(contentDirectory);
   const allPostsData = fileNames
-    .filter((name) => name.endsWith(".mdx") || name.endsWith(".md"))
+    .filter(
+      (name) =>
+        (name.endsWith(".mdx") || name.endsWith(".md")) &&
+        !name.endsWith("deprecated.mdx")
+    )
     .map((fileName) => {
       const slug = fileName.replace(/\.(mdx|md)$/, "");
       const fullPath = path.join(contentDirectory, fileName);
@@ -108,4 +112,3 @@ export const getAllTags = (): string[] => {
   });
   return Array.from(tags).sort();
 };
-
