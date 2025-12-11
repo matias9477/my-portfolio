@@ -31,18 +31,44 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button href="/blog" variant="primary">
-                View Blog
+                My Blog
               </Button>
               <Button href="/projects" variant="outline">
-                View Projects
+                My Projects
               </Button>
               <Button href="/cv.pdf" variant="secondary" external>
-                Download CV
+                Download my CV
               </Button>
             </div>
           </div>
         </Container>
       </section>
+
+      {/* Featured Projects */}
+      {featuredProjects.length > 0 && (
+        <section className="border-b border-gray-800 bg-black py-16">
+          <Container>
+            <div className="mb-8">
+              <h2 className="mb-2 text-3xl font-bold text-gray-100">
+                Featured Projects
+              </h2>
+              <p className="text-gray-400">
+                Highlighted projects and applications I&apos;ve built.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {featuredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Button href="/projects" variant="outline">
+                View All Projects
+              </Button>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
@@ -70,36 +96,14 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Featured Projects */}
-      {featuredProjects.length > 0 && (
-        <section className="border-b border-gray-800 bg-black py-16">
-          <Container>
-            <div className="mb-8">
-              <h2 className="mb-2 text-3xl font-bold text-gray-100">
-                Featured Projects
-              </h2>
-              <p className="text-gray-400">
-                Highlighted projects and applications I've built.
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {featuredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-            <div className="mt-8 text-center">
-              <Button href="/projects" variant="outline">
-                View All Projects
-              </Button>
-            </div>
-          </Container>
-        </section>
-      )}
-
       {/* Medium Posts */}
-      <section className="bg-black py-16">
+      <section className="border-b border-gray-800 bg-black py-16">
         <Container>
-          <MediumFeed />
+          <MediumFeed
+            showTitle={true}
+            showReadAllLink={true}
+            mediumProfileUrl="https://medium.com/@matias.turra"
+          />
         </Container>
       </section>
     </div>

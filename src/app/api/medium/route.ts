@@ -25,22 +25,33 @@ export async function GET() {
     const xml = await response.text();
     const posts: MediumPost[] = [];
 
-    // Simple XML parsing (you might want to use a proper RSS parser)
-    const titleMatches = xml.matchAll(/<title><!\[CDATA\[(.*?)\]\]><\/title>/g);
-    const linkMatches = xml.matchAll(/<link>(.*?)<\/link>/g);
-    const dateMatches = xml.matchAll(/<pubDate>(.*?)<\/pubDate>/g);
+    // Parse RSS feed by extracting items
+    // Medium RSS has items wrapped in <item> tags
+    const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+    const items = Array.from(xml.matchAll(itemRegex));
 
-    const titles = Array.from(titleMatches).map((m) => m[1]);
-    const links = Array.from(linkMatches).map((m) => m[1]);
-    const dates = Array.from(dateMatches).map((m) => m[1]);
+    for (const itemMatch of items) {
+      const itemContent = itemMatch[1];
+      
+      // Extract title (can be CDATA or plain)
+      const titleMatch = itemContent.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>|<title>(.*?)<\/title>/);
+      const title = titleMatch ? (titleMatch[1] || titleMatch[2] || "").trim() : "";
+      
+      // Extract link (should be within the item)
+      const linkMatch = itemContent.match(/<link>(.*?)<\/link>/);
+      const link = linkMatch ? (linkMatch[1] || "").trim() : "";
+      
+      // Extract pubDate
+      const dateMatch = itemContent.match(/<pubDate>(.*?)<\/pubDate>/);
+      const pubDate = dateMatch ? (dateMatch[1] || "").trim() : "";
 
-    // Skip the first title (usually the feed title)
-    for (let i = 1; i < titles.length && i < links.length && i < dates.length; i++) {
-      posts.push({
-        title: titles[i] || "",
-        link: links[i] || "",
-        pubDate: dates[i] || "",
-      });
+      if (title && link && pubDate) {
+        posts.push({
+          title,
+          link,
+          pubDate,
+        });
+      }
     }
 
     return NextResponse.json({ posts: posts.slice(0, 5) });

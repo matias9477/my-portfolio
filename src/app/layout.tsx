@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Matias Turra",
-  description: "Personal portfolio and blog showcasing projects, articles, and more.",
+  title: "Matias Turra | Software Engineer",
+  description:
+    "Personal portfolio and blog showcasing projects, articles, and more.",
 };
 
 export default function RootLayout({

@@ -72,36 +72,34 @@ export default function AboutPage() {
   return (
     <Container>
       <div className="py-12">
-        <h1 className="mb-8 text-4xl font-bold text-gray-100">
-          About Me
-        </h1>
+        <h1 className="mb-8 text-4xl font-bold text-gray-100">About Me</h1>
 
         <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold text-gray-100">
-            Bio
-          </h2>
+          <h2 className="mb-4 text-2xl font-semibold text-gray-100">Bio</h2>
           <div className="prose prose-lg max-w-none prose-invert">
             <p className="text-gray-300">
-              I'm a Lead UI Engineer based in Córdoba, Argentina, with a passion
-              for building beautiful, performant, and accessible web and mobile
+              I&apos;m a Software Engineer based in Málaga, Spain, with a
+              passion for building friendly and performant web and mobile
               applications. Currently leading the UI team at Symmetry Systems,
               where I work on DataGuard, a data posture security management
-              product used by major companies including Lowe's, Mattel, and NASA.
+              product used by major companies like Lowe&apos;s, Mattel,
+              Deloitte, NASA among others.
             </p>
             <p className="text-gray-300">
               With experience spanning from fullstack development to UI
-              leadership, I specialize in React, TypeScript, Next.js, and GraphQL.
-              I enjoy collaborating with UX and backend teams to create
+              leadership, I specialize in React, TypeScript, Next.js, and
+              GraphQL. I enjoy collaborating with UX and backend teams to create
               user-friendly interfaces and implementing features from scratch.
-              When I'm not coding, you can find me writing about development on
-              Medium or contributing to open-source projects.
+              When I&apos;m not coding for money, you can find me writing about
+              development on Medium or creating my own apps to satify my own
+              needs.
             </p>
           </div>
         </section>
 
         <section className="mb-12">
           <h2 className="mb-6 text-2xl font-semibold text-gray-100">
-            Where I've Worked
+            Where I&apos;ve Worked
           </h2>
           <div className="space-y-8">
             {timeline.map((item, index) => (
@@ -116,12 +114,8 @@ export default function AboutPage() {
                 <h3 className="mb-1 text-xl font-semibold text-gray-100">
                   {item.role}
                 </h3>
-                <p className="mb-1 text-gray-400">
-                  {item.company}
-                </p>
-                <p className="mb-3 text-sm text-gray-500">
-                  {item.location}
-                </p>
+                <p className="mb-1 text-gray-400">{item.company}</p>
+                <p className="mb-3 text-sm text-gray-500">{item.location}</p>
                 <ul className="list-disc space-y-1 pl-5 text-gray-300">
                   {item.highlights.map((highlight, hIndex) => (
                     <li key={hIndex}>{highlight}</li>
@@ -150,9 +144,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="mb-6 text-2xl font-semibold text-gray-100">
-            Skills
-          </h2>
+          <h2 className="mb-6 text-2xl font-semibold text-gray-100">Skills</h2>
           <div className="flex flex-wrap gap-3">
             {skills.map((skill) => (
               <Badge key={skill} variant="default">
@@ -163,13 +155,11 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="mb-4 text-2xl font-semibold text-gray-100">
-            Contact
-          </h2>
+          <h2 className="mb-4 text-2xl font-semibold text-gray-100">Contact</h2>
           <div className="space-y-2 text-gray-300">
             <p>
               <strong>Location:</strong>{" "}
-              <span className="text-gray-400">Córdoba, Argentina</span>
+              <span className="text-gray-400">Málaga, Spain</span>
             </p>
             <p>
               <strong>Email:</strong>{" "}
@@ -230,4 +220,3 @@ export default function AboutPage() {
     </Container>
   );
 }
-
